@@ -1,6 +1,7 @@
 package com.intensivoJava.dslist.DTO;
 
 import com.intensivoJava.dslist.entities.Game;
+import com.intensivoJava.dslist.projetions.GameMinProjection;
 import jakarta.persistence.Column;
 
 public class GameMinDTO {
@@ -22,6 +23,12 @@ public class GameMinDTO {
         genre = entity.getGenre();
         score = entity.getScore();
         shortDescription = entity.getShortDescription();
+    }
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getGameYear();
+        shortDescription = projection.getShortDescription();
     }
     public GameMinDTO() {
     }
